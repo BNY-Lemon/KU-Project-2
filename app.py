@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, redirect, Response
+from flask import Flask, render_template, jsonify, redirect
 import pymongo
 from bson.json_util import dumps
 
@@ -17,18 +17,22 @@ def index():
     # Return the template with the happiness list passed in
     return render_template('index.html')
 
+# page routes    
+@app.route('/heatMap.html')
+def heat_map():
+    # Return the template with the happiness list passed in
+    return render_template('heatMap.html')
+
 
 # create api route for each table
 @app.route("/api/v1.0/happiness")
 def happiness():
     happiness_table = db.happiness.find()
     # convert to list
+    happiness_table = list(happiness_table)
     print(happiness_table)
     
-    resp = Response(response=dumps(happiness_table),
-                    status=200,
-                    mimetype="application/json")
-    return resp
+    return dumps(happiness_table)
 
 
 @app.route("/api/v1.0/pisa")

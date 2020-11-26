@@ -1,9 +1,10 @@
-const url = "/api/v1.0/pisa";
+var url = "/api/v1.0/happiness";
 
 // Fetch the JSON data and console log it
-d3.json(url).then(data => {
-  console.log(data)})
+fetch(url)
+  .then(response => response.json())
+  .then(data => console.log(data));
 
-// Promise Pending
-// const dataPromise = d3.json(url);
+// // Promise Pending
+// var dataPromise = d3.json(url);
 // console.log("Data Promise: ", dataPromise);
