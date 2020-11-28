@@ -21,7 +21,7 @@ fetch(url)
 
 // Create a map object
 var myMap = L.map("map", {
-  center: [37.09, -95.71],
+  center: [50, 15],
   zoom: 5
 });
 
@@ -44,7 +44,14 @@ d3.json(url, function(data) {
       // nonExistentFunction();
         var country = data[i];
         L.marker([country.Latitude, country.Longitude]) //
-          .bindPopup("<h1>" + country.Country + "</h1> <hr> <h3>Happiness Ladder Score " + country["Ladder score"] + "</h3>") // finish adding rest of data
+          .bindPopup(`<h1>${country.Country}</h1> <hr> <h4>Happiness Score: ${Math.round(100 * country["Ladder score"])/100}</h4> <hr> 
+          <h4> GDP Per Capita: ${Math.round(100 * country["Logged GDP per capita"])/100}</h4> <hr>
+          <h4> Social Support: ${Math.round(100 *country["Social support"])/100}</h4> <hr> 
+          <h4> Life Expectancy: ${Math.round(100 *country["Healthy life expectancy"])/100}</h4> <hr> 
+          <h4> Freedom Score: ${Math.round(100 *country["Freedom to make life choices"])/100}</h4> <hr>
+          <h4> Generosity: ${Math.round(100 *country["Generosity"])/100}</h4> <hr>
+          <h4> Corruption Score: ${Math.round(100 *country["Perceptions of corruption"])/100}</h4> <hr>
+          <h4> Dystopia Score: ${Math.round(100 *country["Dystopia + residual"])/100}</h4>`) // finish adding rest of data
           .addTo(myMap);
         console.log("random");
     } catch {

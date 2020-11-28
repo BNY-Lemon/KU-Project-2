@@ -23,8 +23,22 @@ def heat_map():
     # Return the template with the happiness list passed in
     return render_template('heatMap.html')
 
+@app.route('/visualization.html')
+def plot():
+    # Return the template with the happiness list passed in
+    return render_template('visualization.html')
+
 
 # create api route for each table
+@app.route("/api/v1.0/master")
+def master():
+    master_table = db.master.find()
+    # convert to list
+    master_table = list(master_table)
+    print(master_table)
+    
+    return dumps(master_table)
+
 @app.route("/api/v1.0/happiness")
 def happiness():
     happiness_table = db.happiness.find()

@@ -13,24 +13,13 @@
   <!-- Our CSS -->
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
   <!-- <link rel="stylesheet" type="../static/css" href="style.css"> -->
-              <!-- Leaflet JS -->
-              <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-              integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-              crossorigin=""></script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-        <script src="{{ url_for('static', filename='api.js') }}"></script>
-            <!-- API key->> -->
-        <script type="text/javascript" src="{{ url_for('static', filename='config.js') }}"></script>
-            <!-- JS -->
-        <script type="text/javascript" src="{{ url_for('static', filename='logic.js') }}"></script>
 </head>
 
 <body>
     <!-- NAV -->
     <section id="nav-bar">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="index.html">Home</a>
+          <a class="navbar-brand" href="/">Home</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -40,30 +29,28 @@
     
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="comparison.html">About the Data</a>
+                <a class="nav-link" href="/visualization.html">Visualization</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/heatMap.html">Heat Map</a>
+                <a class="nav-link" href="/heatMap.html">Map</a>
               </li>
             </ul>
           </div>
       </nav>
       </section>
         <!-- HEADING TITLE -->
-        <div class=“container-fluid”>
-            <div class=“row”>
-              <div class=“col-md-9 col-lg-12 “>
-                <div class=“box”>
-                  <div class=“header”>
-                    <h3 class=“title”>Happiness Index</h3>
-                    <hr>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class=“row”>
-            <!-- The div where we will inject our map -->
               <div id="map"></div>
+              <!-- Leaflet JS -->
+              <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+              integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+              crossorigin=""></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+        <!-- <script src="{{ url_for('static', filename='api.js') }}"></script> -->
+            <!-- API key->> -->
+        <script type="text/javascript" src="{{ url_for('static', filename='config.js') }}"></script>
+            <!-- JS -->
+        <script type="text/javascript" src="{{ url_for('static', filename='logic.js') }}"></script>
 
             </div>
           </div>
