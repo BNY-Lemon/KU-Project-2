@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
 <style>
-  h5 {
+  .title {
     font-family: 'Noto Sans JP'
   }
 </style>
@@ -54,14 +54,7 @@
           <div class=“col-md-9 col-lg-12 “>
             <div class=“box”>
               <div class=“header”>
-                <h1 class=“title>Happiness Index</h1>
-                <div class = "p-5 col-md-9">
-                  <h5 class= "pb-5">The well-being (or perception of well-being) of a specific country is recognized as a measure of social progress and the success of public policies. Many (but not all) local and national governments use this data and research to pursue policies that help their citizens live better lives. The happiness report measures the well-being of the citizens of different countries according to a series of statistical variables and different perceptions.
-                    In the first visualization, you will find data that helps to see what other factors may affect happiness in each country. The first data visualization page includes the scatter plot that represents each country with circle elements. The Y axis contains the ladder score (happiness score) and the X axis see the hours average work week, education score, population density and the English-speaking population. </h5>
-                    <h5 class= "pb-5">But you may want to know, what are the variables that the World Happiness Report measures? </h5>
-                    <h5 class= "pb-5">To prepare a list of the happiest countries in the world, different data related to the levels of economic development have been analyzed, but also other variables that have a subjective nature, such as the positive and negative experiences expressed by the population. </h5>
-                    <h5>In the second visualization you will find out the variables used from the happiness report. Our map contains longitude and latitude of the given country. Each popup included each variable such as GDP Per-Capita, Social Support, Life Expectancy, Freedom Score, Generosity, Corruption Score, Dystopia Score. This descriptive information helps to understand how the happiness report works.</h5>
-                </div>
+                <h1 class=“title”>Happiness Index</h1>
                 <hr>
               </div>
             </div>
@@ -80,6 +73,14 @@
       </div> -->
  <!-- TABLES FOR APPENDING -->
  <div class="col-md-5 col-lg-12">
+
+  <div class="chart">
+  </div>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+  <!-- <script type="text/javascript" src="plots.js"></script> -->
+  <script type="text/javascript" src="{{ url_for('static', filename='plots.js') }}"></script>
+
         <!-- <div class = "row">
             <div class = "mx-auto" style = "width: 400px;">
                 <figure class = "figure p-6">
