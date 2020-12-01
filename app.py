@@ -12,7 +12,7 @@ client = pymongo.MongoClient("mongodb://DVGroup3:sealab2021@cluster0-shard-00-00
 db = client.happiness
 
 # Set route
-@app.route('/')
+@app.route('/index.html')
 def index():
     # Return the template with the happiness list passed in
     return render_template('index.html')
